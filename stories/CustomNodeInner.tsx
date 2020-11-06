@@ -5,6 +5,7 @@ import { FlowChart, INodeInnerDefaultProps } from '../src'
 import * as actions from '../src/container/actions'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const Outer = styled.div`
   padding: 30px;
@@ -59,6 +60,7 @@ export class CustomNodeInnerDemo extends React.Component {
           chart={chart}
           callbacks={stateActions}
           Components={{
+            ...DefaultComponents,
             NodeInner: NodeInnerCustom,
           }}
         />

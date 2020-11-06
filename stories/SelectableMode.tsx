@@ -2,12 +2,17 @@ import * as React from 'react'
 import { FlowChartWithState } from '../src'
 import { Code, Content, Message, Page, Sidebar } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 export const SelectableMode = () => {
   return (
     <Page>
       <Content>
-        <FlowChartWithState config={{ readonly: true, selectable: true }} initialValue={chartSimple} />
+        <FlowChartWithState 
+          Components={DefaultComponents}
+          config={{ readonly: true, selectable: true }} 
+          initialValue={chartSimple} 
+        />
       </Content>
 
       <Sidebar>

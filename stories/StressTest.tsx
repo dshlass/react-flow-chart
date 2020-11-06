@@ -3,6 +3,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { FlowChartWithState } from '../src'
 import { Page } from './components'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const getChart = (rows: number, cols: number) => {
   const xyGrid = flatten(range(0, cols * 300, 300).map((x) => range(0, rows * 150, 150).map((y) => ({ x, y }))))
@@ -83,7 +84,11 @@ const StressTestWithState = () => {
         <Input type="number" value={rows} onChange={(e) => setRows(parseInt(e.target.value, 10))} />
       </Controls>
       <Page>
-        <FlowChartWithState key={`${cols}:${rows}`} initialValue={chart} />
+        <FlowChartWithState 
+          Components={DefaultComponents}
+          key={`${cols}:${rows}`} 
+          initialValue={chart} 
+        />
       </Page>
     </>
   )

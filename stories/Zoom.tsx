@@ -5,6 +5,7 @@ import { FlowChart } from '../src'
 import * as actions from '../src/container/actions'
 import { Content, Page, Sidebar } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 export const Message = styled.div`
   margin: 10px;
@@ -40,7 +41,11 @@ export class Zoom extends React.Component {
     return (
       <Page>
         <Content>
-          <FlowChart chart={chart} callbacks={stateActions} />
+          <FlowChart 
+            Components={DefaultComponents}
+            chart={chart} 
+            callbacks={stateActions} 
+          />
         </Content>
         <Sidebar>
           <Message>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FlowChartWithState, ICanvasOuterDefaultProps } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const CanvasOuterCustom = styled.div<ICanvasOuterDefaultProps>`
   position: relative;
@@ -23,6 +24,7 @@ export const CustomCanvasOuterDemo = () => {
       <FlowChartWithState
         initialValue={chartSimple}
         Components={ {
+          ...DefaultComponents,
           CanvasOuter: CanvasOuterCustom,
         }}
       />

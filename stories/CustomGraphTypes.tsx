@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FlowChartWithState, IChart } from '../src'
 import { Page } from './components'
+import { DefaultComponents } from './misc/defaultComponents'
 
 export const CustomGraphTypes = () => {
   const chart: IChart<number, boolean, string, number> = {
@@ -141,6 +142,7 @@ export const CustomGraphTypes = () => {
   return (
     <Page>
       <FlowChartWithState
+        Components={DefaultComponents}
         initialValue={chart}
       />
     </Page>

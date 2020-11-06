@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FlowChartWithState, INodeDefaultProps } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const DarkBox = styled.div`
   position: absolute;
@@ -54,6 +55,7 @@ export const CustomNodeDemo = () => {
       <FlowChartWithState
         initialValue={chartSimple}
         Components={ {
+          ...DefaultComponents,
           Node: NodeCustom,
         }}
       />

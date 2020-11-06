@@ -5,6 +5,7 @@ import { FlowChart, LinkDefault } from '../src'
 import * as actions from '../src/container/actions'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const Label = styled.div`
   position: absolute;
@@ -57,6 +58,7 @@ export class CustomLinkDemo extends React.Component {
           chart={chart}
           callbacks={stateActions}
           Components={{
+            ...DefaultComponents,
             Link: (props) => {
               const { startPos, endPos, onLinkClick, link } = props
               const centerX = startPos.x + (endPos.x - startPos.x) / 2
