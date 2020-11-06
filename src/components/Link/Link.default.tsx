@@ -30,11 +30,8 @@ export const LinkDefault = (props: ILinkDefaultProps) => {
     (fromPort.properties && fromPort.properties.linkColor) || 'cornflowerblue'
 
   const linkProps = {
-    config,
     points,
     linkColor,
-    startPos,
-    endPos,
     ...props,
   }
   
