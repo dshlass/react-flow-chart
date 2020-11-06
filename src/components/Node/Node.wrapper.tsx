@@ -32,16 +32,16 @@ import { INodeDefaultProps, NodeDefault } from './Node.default'
 export interface INodeWrapperProps {
   config: IConfig
   node: INode
-  Component: React.FunctionComponent<INodeDefaultProps>
+  Component?: React.FunctionComponent<INodeDefaultProps>
   offset: IPosition
   selected: ISelectedOrHovered | undefined
   hovered: ISelectedOrHovered | undefined
   selectedLink: ILink | undefined
   hoveredLink: ILink | undefined
   isSelected: boolean
-  NodeInner: React.FunctionComponent<INodeInnerDefaultProps>
-  Ports: React.FunctionComponent<IPortsDefaultProps>
-  Port: React.FunctionComponent<IPortDefaultProps>
+  NodeInner?: React.FunctionComponent<INodeInnerDefaultProps>
+  Ports?: React.FunctionComponent<IPortsDefaultProps>
+  Port?: React.FunctionComponent<IPortDefaultProps>
   onPortPositionChange: IOnPortPositionChange
   onLinkStart: IOnLinkStart
   onLinkMove: IOnLinkMove
@@ -82,6 +82,9 @@ export const NodeWrapper = ({
   onLinkComplete,
   onLinkCancel,
 }: INodeWrapperProps) => {
+  if (typeof NodeInner === 'undefined') throw new Error('NodeInner is not defined')
+  if (typeof Ports === 'undefined') throw new Error('Ports is not defined')
+
   const { zoomScale } = React.useContext(CanvasContext)
   const [size, setSize] = React.useState<ISize>({ width: 0, height: 0 })
   const [portsSize, setPortsSize] = React.useState<ISize>({ width: 0, height: 0 })

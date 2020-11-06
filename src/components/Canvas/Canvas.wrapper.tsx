@@ -19,8 +19,8 @@ export interface ICanvasWrapperProps {
   onDeleteKey: IOnDeleteKey
   onCanvasClick: IOnCanvasClick
   onCanvasDrop: IOnCanvasDrop
-  ComponentInner: React.FunctionComponent<ICanvasInnerDefaultProps>
-  ComponentOuter: React.FunctionComponent<ICanvasOuterDefaultProps>
+  ComponentInner?: React.FunctionComponent<ICanvasInnerDefaultProps>
+  ComponentOuter?: React.FunctionComponent<ICanvasOuterDefaultProps>
   onSizeChange: (x: number, y: number) => void
   children: any
 }
@@ -82,6 +82,9 @@ export class CanvasWrapper extends React.Component<ICanvasWrapperProps, IState> 
     } = this.props
     const { offsetX, offsetY } = this.state
     const { zoom } = config
+
+    if (typeof ComponentInner === 'undefined') throw new Error('ComponentInner is not defined')
+    if (typeof ComponentOuter === 'undefined') throw new Error('ComponentOuter is not defined')
 
     const options = {
       transformEnabled: zoom && zoom.transformEnabled ? zoom.transformEnabled : true,

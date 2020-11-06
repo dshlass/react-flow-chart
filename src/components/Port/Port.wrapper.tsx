@@ -27,7 +27,7 @@ export interface IPortWrapperProps {
   node: INode
   portsSize: ISize
   onPortPositionChange: IOnPortPositionChange
-  Component: React.FunctionComponent<IPortDefaultProps>
+  Component?: React.FunctionComponent<IPortDefaultProps>
 
   // Link handlers
   onLinkStart: IOnLinkStart
