@@ -4,7 +4,7 @@ import {
   ILinkDefaultProps, INodeDefaultProps, INodeInnerDefaultProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
   IOnDragCanvasStop, IOnDragNode, IOnDragNodeStop, IOnLinkCancel, IOnLinkClick, IOnLinkComplete, IOnLinkMouseEnter,
   IOnLinkMouseLeave, IOnLinkMove, IOnLinkStart, IOnNodeClick, IOnNodeDoubleClick, IOnNodeMouseEnter, IOnNodeMouseLeave, IOnNodeSizeChange,
-  IOnPortPositionChange, IOnZoomCanvas, IPortDefaultProps, IPortsDefaultProps, ISelectedOrHovered, LinkWrapper, NodeWrapper,
+  IOnPortPositionChange, IOnZoomCanvas, IPortDefaultProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
 } from '../../'
 import { getMatrix } from './utils/grid'
 
@@ -95,10 +95,10 @@ export const FlowChart = (props: IFlowChartProps) => {
       CanvasOuter,
       CanvasInner,
       NodeInner,
-      Ports,
+      Ports = PortsDefault,
       Port,
       Node,
-      Link,
+      Link = LinkDefault,
     } = {},
     config = {},
   } = props
