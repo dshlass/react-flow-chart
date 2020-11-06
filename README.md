@@ -1,3 +1,13 @@
+# This is a fork of MrBlenny's `react-flow-chart`
+The aim of this fork is to remove the dependency on `style-components` and get it into a production-ready state. The fork was made from version 0.0.14.
+
+## Development
+
+```bash
+yarn install
+yarn start:storybook
+```
+
 # React Flow Chart
 
 [![CircleCI](https://circleci.com/gh/MrBlenny/react-flow-chart.svg?style=svg)](https://circleci.com/gh/MrBlenny/react-flow-chart)
@@ -207,11 +217,3 @@ const Example = (
 If you're interested in helping out, let me know. 
 
 In particular, would be great to get a hand with docs and redux / mobx integrations.
-
-
-## Development
-
-```bash
-npm install
-npm run start:storybook
-```
