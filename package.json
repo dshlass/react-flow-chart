@@ -1,10 +1,9 @@
 {
-  "name": "@mrblenny/react-flow-chart",
+  "name": "@kaliber/react-flow-chart",
   "version": "0.0.14",
   "description": "A flexible, stateless flow chart library for react.",
   "main": "src/index.js",
-  "repository": "git@github.com:MrBlenny/react-flow-chart.git",
-  "author": "David Revay <daverevay@gmail.com>",
+  "repository": "git@github.com:kaliberjs/react-flow-chart.git",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -45,8 +44,7 @@
   },
   "peerDependencies": {
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "styled-components": "^5.1.0"
+    "react-dom": "^16.8.4"
   },
   "scripts": {
     "start:storybook": "start-storybook -p 6006 -c config/storybook",
