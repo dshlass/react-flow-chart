@@ -3,8 +3,11 @@
   "version": "0.0.14",
   "description": "A flexible, stateless flow chart library for react.",
   "main": "src/index.js",
-  "repository": "git@github.com:kaliberjs/react-flow-chart.git",
+  "publishConfig": {
+    "access": "public"
+  },  
   "license": "MIT",
+  "repository": "https://github.com/kaliberjs/react-flow-chart.git",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@storybook/addon-centered": "^5.3.18",
@@ -52,5 +55,6 @@
     "build": "tsc && cp package.json dist/ && cp README.md ./dist",
     "test": "npm run lint",
     "lint": "tslint -p tsconfig.json -c tslint.json"
-  }
+  },
+  "sideEffects": false
 }

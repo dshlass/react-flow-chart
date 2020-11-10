@@ -1,12 +1,27 @@
 # This is a fork of MrBlenny's `react-flow-chart`
 The aim of this fork is to remove the dependency on `style-components` and get it into a production-ready state. The fork was made from version 0.0.14.
 
+Original library: [https://github.com/MrBlenny/react-flow-chart]
+
 ## Development
 
 ```bash
 yarn install
 yarn start:storybook
 ```
+
+![](https://media.giphy.com/media/3o6MbrRTzAPLdJgL5u/giphy.gif)
+
+## Disclaimer
+This library is intended for internal use, we provide no support, use at your own risk.
+
+
+
+-------------------
+
+
+
+*Original documentation*
 
 # React Flow Chart
 
