@@ -3,7 +3,7 @@ import * as React from 'react'
 import { v4 } from 'uuid'
 import { IConfig, ILink, INode, IOnLinkCancel, IOnLinkComplete, IOnLinkMove, IOnLinkStart, IOnPortPositionChange, IPort, IPosition, ISelectedOrHovered, ISize } from '../../'
 import CanvasContext from '../Canvas/CanvasContext'
-import { IPortDefaultProps, PortDefault } from './Port.default'
+import { IPortDefaultProps } from './Port.default'
 
 /** Construct the composed path by traversing parentElements */
 const composedPath = (el: HTMLElement | null) => {
@@ -27,7 +27,7 @@ export interface IPortWrapperProps {
   node: INode
   portsSize: ISize
   onPortPositionChange: IOnPortPositionChange
-  Component?: React.FunctionComponent<IPortDefaultProps>
+  Component: React.FunctionComponent<IPortDefaultProps>
 
   // Link handlers
   onLinkStart: IOnLinkStart
@@ -127,7 +127,7 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
       style,
       port,
       node,
-      Component = PortDefault,
+      Component,
       config,
     } = this.props
 

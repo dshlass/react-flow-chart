@@ -33,12 +33,12 @@ export interface IFlowChartCallbacks {
 }
 
 export interface IFlowChartComponents {
-  CanvasOuter?: React.FunctionComponent<ICanvasOuterDefaultProps>
-  CanvasInner?: React.FunctionComponent<ICanvasInnerDefaultProps>
-  NodeInner?: React.FunctionComponent<INodeInnerDefaultProps>
+  CanvasOuter: React.FunctionComponent<ICanvasOuterDefaultProps>
+  CanvasInner: React.FunctionComponent<ICanvasInnerDefaultProps>
+  NodeInner: React.FunctionComponent<INodeInnerDefaultProps>
   Ports?: React.FunctionComponent<IPortsDefaultProps>
-  Port?: React.FunctionComponent<IPortDefaultProps>
-  Node?: React.FunctionComponent<INodeDefaultProps>
+  Port: React.FunctionComponent<IPortDefaultProps>
+  Node: React.FunctionComponent<INodeDefaultProps>
   Link?: React.FunctionComponent<ILinkDefaultProps>
 }
 
@@ -55,7 +55,7 @@ export interface IFlowChartProps {
   /**
    * Custom components
    */
-  Components?: IFlowChartComponents
+  Components: IFlowChartComponents
   /**
    * Other config. This will be passed into all components and actions.
    * Don't store state here as it may trigger re-renders
@@ -99,7 +99,7 @@ export const FlowChart = (props: IFlowChartProps) => {
       Port,
       Node,
       Link = LinkDefault,
-    } = {},
+    },
     config = {},
   } = props
   const { links, nodes, selected, hovered, offset, scale } = chart

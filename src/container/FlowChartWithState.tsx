@@ -5,7 +5,7 @@ import mapValues from './utils/mapValues'
 
 export interface IFlowChartWithStateProps {
   initialValue: IChart
-  Components?: IFlowChartComponents
+  Components: IFlowChartComponents
   config?: IConfig
 }
 
