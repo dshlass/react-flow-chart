@@ -4,7 +4,7 @@ import {
   NodeDefault, 
   NodeInnerDefault, 
   PortDefault, 
-} from '../../src/components'
+} from '../components'
 
 export const DefaultComponents = {
   CanvasOuter: CanvasOuterDefault,

@@ -27,7 +27,7 @@ import {
 } from '../../'
 import { noop } from '../../utils'
 import CanvasContext from '../Canvas/CanvasContext'
-import { INodeDefaultProps, NodeDefault } from './Node.default'
+import { INodeDefaultProps } from './Node.default'
 
 export interface INodeWrapperProps {
   config: IConfig
@@ -64,7 +64,7 @@ export const NodeWrapper = ({
   onNodeClick,
   onNodeDoubleClick,
   isSelected,
-  Component = NodeDefault,
+  Component,
   onNodeSizeChange,
   onNodeMouseEnter,
   onNodeMouseLeave,
