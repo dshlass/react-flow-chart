@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { ICanvasInnerDefaultProps } from '../../src'
+import { ICanvasInnerProps } from '../../src'
 
-export const CanvasInnerDefault = styled.div<ICanvasInnerDefaultProps>`
+export const CanvasInnerDefault = styled.div<ICanvasInnerProps>`
   position: relative;
   outline: 1px dashed rgba(0,0,0,0.1);
   width: 10000px;

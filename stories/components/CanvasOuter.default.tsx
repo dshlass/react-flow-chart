@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { ICanvasOuterDefaultProps } from '../../src'
+import { ICanvasOuterProps } from '../../src'
 
-export const CanvasOuterDefault = styled.div<ICanvasOuterDefaultProps>`
+export const CanvasOuterDefault = styled.div<ICanvasOuterProps>`
   position: relative;
   background-size: 20px 20px;
   background-color: rgba(0,0,0,0.08);

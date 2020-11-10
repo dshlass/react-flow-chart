@@ -1,7 +1,7 @@
 import { cloneDeep, mapValues } from 'lodash'
 import * as React from 'react'
 import styled from 'styled-components'
-import { FlowChart, INodeInnerDefaultProps } from '../src'
+import { FlowChart, INodeInnerProps } from '../src'
 import * as actions from '../src/container/actions'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
@@ -21,7 +21,7 @@ const Input = styled.input`
  * Create the custom component,
  * Make sure it has the same prop signature
  */
-const NodeInnerCustom = ({ node, config }: INodeInnerDefaultProps) => {
+const NodeInnerCustom = ({ node, config }: INodeInnerProps) => {
   if (node.type === 'output-only') {
     return (
       <Outer>

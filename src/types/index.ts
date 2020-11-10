@@ -1,4 +1,5 @@
 export * from './chart'
+export * from './components'
 export * from './config'
 export * from './functions'
 export * from './generics'

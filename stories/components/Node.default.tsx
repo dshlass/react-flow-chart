@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import { INodeDefaultProps } from '../../src'
+import { INodeProps } from '../../src'
 
-export const NodeDefault = styled.div<INodeDefaultProps>`
+export const NodeDefault = styled.div<INodeProps>`
   position: absolute;
   transition: 0.3s ease box-shadow, 0.3s ease margin-top;
   background: white;

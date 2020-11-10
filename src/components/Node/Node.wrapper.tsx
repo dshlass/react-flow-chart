@@ -5,7 +5,7 @@ import {
   IConfig,
   ILink,
   INode,
-  INodeInnerDefaultProps,
+  INodeInnerProps,
   IOnDragNode,
   IOnDragNodeStop,
   IOnLinkCancel,
@@ -18,30 +18,30 @@ import {
   IOnNodeMouseLeave,
   IOnNodeSizeChange,
   IOnPortPositionChange,
-  IPortDefaultProps,
+  IPortProps,
   IPortsDefaultProps,
   IPosition,
   ISelectedOrHovered,
   ISize,
   PortWrapper,
+  INodeProps
 } from '../../'
 import { noop } from '../../utils'
 import CanvasContext from '../Canvas/CanvasContext'
-import { INodeDefaultProps } from './Node.default'
 
 export interface INodeWrapperProps {
   config: IConfig
   node: INode
-  Component: React.FunctionComponent<INodeDefaultProps>
+  Component: React.FunctionComponent<INodeProps>
   offset: IPosition
   selected: ISelectedOrHovered | undefined
   hovered: ISelectedOrHovered | undefined
   selectedLink: ILink | undefined
   hoveredLink: ILink | undefined
   isSelected: boolean
-  NodeInner: React.FunctionComponent<INodeInnerDefaultProps>
+  NodeInner: React.FunctionComponent<INodeInnerProps>
   Ports: React.FunctionComponent<IPortsDefaultProps>
-  Port: React.FunctionComponent<IPortDefaultProps>
+  Port: React.FunctionComponent<IPortProps>
   onPortPositionChange: IOnPortPositionChange
   onLinkStart: IOnLinkStart
   onLinkMove: IOnLinkMove

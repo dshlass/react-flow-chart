@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {
-  CanvasWrapper, ICanvasInnerDefaultProps, ICanvasOuterDefaultProps, IChart, IConfig, ILink,
-  ILinkDefaultProps, INodeDefaultProps, INodeInnerDefaultProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
+  CanvasWrapper, ICanvasInnerProps, ICanvasOuterProps, IChart, IConfig, ILink,
+  ILinkDefaultProps, INodeProps, INodeInnerProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
   IOnDragCanvasStop, IOnDragNode, IOnDragNodeStop, IOnLinkCancel, IOnLinkClick, IOnLinkComplete, IOnLinkMouseEnter,
   IOnLinkMouseLeave, IOnLinkMove, IOnLinkStart, IOnNodeClick, IOnNodeDoubleClick, IOnNodeMouseEnter, IOnNodeMouseLeave, IOnNodeSizeChange,
-  IOnPortPositionChange, IOnZoomCanvas, IPortDefaultProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
+  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
 } from '../../'
 import { getMatrix } from './utils/grid'
 
@@ -33,12 +33,12 @@ export interface IFlowChartCallbacks {
 }
 
 export interface IFlowChartComponents {
-  CanvasOuter: React.FunctionComponent<ICanvasOuterDefaultProps>
-  CanvasInner: React.FunctionComponent<ICanvasInnerDefaultProps>
-  NodeInner: React.FunctionComponent<INodeInnerDefaultProps>
+  CanvasOuter: React.FunctionComponent<ICanvasOuterProps>
+  CanvasInner: React.FunctionComponent<ICanvasInnerProps>
+  NodeInner: React.FunctionComponent<INodeInnerProps>
   Ports?: React.FunctionComponent<IPortsDefaultProps>
-  Port: React.FunctionComponent<IPortDefaultProps>
-  Node: React.FunctionComponent<INodeDefaultProps>
+  Port: React.FunctionComponent<IPortProps>
+  Node: React.FunctionComponent<INodeProps>
   Link?: React.FunctionComponent<ILinkDefaultProps>
 }
 

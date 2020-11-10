@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import { v4 } from 'uuid'
-import { IConfig, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas, IOnDragCanvasStop, IOnZoomCanvas, REACT_FLOW_CHART } from '../../'
+import { IConfig, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas, IOnDragCanvasStop, IOnZoomCanvas, ICanvasInnerProps, ICanvasOuterProps, REACT_FLOW_CHART } from '../../'
 import CanvasContext from './CanvasContext'
-import { ICanvasInnerDefaultProps } from './CanvasInner.default'
-import { ICanvasOuterDefaultProps } from './CanvasOuter.default'
 
 export interface ICanvasWrapperProps {
   config: IConfig
@@ -19,8 +17,8 @@ export interface ICanvasWrapperProps {
   onDeleteKey: IOnDeleteKey
   onCanvasClick: IOnCanvasClick
   onCanvasDrop: IOnCanvasDrop
-  ComponentInner: React.FunctionComponent<ICanvasInnerDefaultProps>
-  ComponentOuter: React.FunctionComponent<ICanvasOuterDefaultProps>
+  ComponentInner: React.FunctionComponent<ICanvasInnerProps>
+  ComponentOuter: React.FunctionComponent<ICanvasOuterProps>
   onSizeChange: (x: number, y: number) => void
   children: any
 }
