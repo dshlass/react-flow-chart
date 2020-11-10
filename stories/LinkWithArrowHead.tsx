@@ -4,6 +4,7 @@ import { FlowChart } from '../src'
 import * as actions from '../src/container/actions'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 export class LinkWithArrowHead extends React.Component {
   public state = cloneDeep(chartSimple)
@@ -15,6 +16,7 @@ export class LinkWithArrowHead extends React.Component {
     return (
       <Page>
         <FlowChart
+          Components={DefaultComponents}
           chart={chart}
           callbacks={stateActions}
           config={{

@@ -4,6 +4,7 @@ import { FlowChart } from '../src'
 import * as actions from '../src/container/actions'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 /**
  * State is external to the <FlowChart> Element
@@ -20,6 +21,7 @@ export class ExternalReactState extends React.Component {
     return (
       <Page>
         <FlowChart
+          Components={DefaultComponents}
           chart={chart}
           callbacks={stateActions}
         />

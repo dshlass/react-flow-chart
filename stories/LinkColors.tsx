@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { FlowChartWithState, IChart } from '../src'
 import { Page } from './components'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const chartSimpleWithLinkColors: IChart = {
   offset: {
@@ -135,7 +136,10 @@ const chartSimpleWithLinkColors: IChart = {
 export const LinkColors = () => {
   return (
     <Page>
-      <FlowChartWithState initialValue={chartSimpleWithLinkColors} />
+      <FlowChartWithState 
+        Components={DefaultComponents}
+        initialValue={chartSimpleWithLinkColors} 
+      />
     </Page>
   )
 }

@@ -5,6 +5,7 @@ import { FlowChart } from '../src'
 import * as actions from '../src/container/actions'
 import { Content, Page, Sidebar } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const Message = styled.div`
   margin: 10px;
@@ -39,6 +40,7 @@ export class SelectedSidebar extends React.Component {
       <Page>
         <Content>
           <FlowChart
+            Components={DefaultComponents}
             chart={chart}
             callbacks={stateActions}
           />

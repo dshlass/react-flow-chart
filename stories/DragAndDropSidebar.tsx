@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FlowChartWithState } from '../src'
 import { Content, Page, Sidebar, SidebarItem } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const Message = styled.div`
 margin: 10px;
@@ -13,7 +14,10 @@ background: rgba(0,0,0,0.05);
 export const DragAndDropSidebar = () => (
   <Page>
     <Content>
-      <FlowChartWithState initialValue={chartSimple} />
+      <FlowChartWithState 
+        Components={DefaultComponents}
+        initialValue={chartSimple} 
+      />
     </Content>
     <Sidebar>
       <Message>

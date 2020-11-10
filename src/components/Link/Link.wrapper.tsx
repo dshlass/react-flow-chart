@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { IConfig, ILink, INode, IOnLinkClick, IOnLinkMouseEnter, IOnLinkMouseLeave } from '../../'
 import { noop } from '../../utils'
-import { ILinkDefaultProps, LinkDefault } from './Link.default'
+import { ILinkDefaultProps } from './Link.default'
 import { getLinkPosition } from './utils'
 
 export interface ILinkWrapperProps {
@@ -14,14 +14,14 @@ export interface ILinkWrapperProps {
   onLinkMouseEnter: IOnLinkMouseEnter
   onLinkMouseLeave: IOnLinkMouseLeave
   onLinkClick: IOnLinkClick
-  Component?: React.FunctionComponent<ILinkDefaultProps>
+  Component: React.FunctionComponent<ILinkDefaultProps>
   matrix?: number[][]
 }
 
 export const LinkWrapper = React.memo(
   ({
     config,
-    Component = LinkDefault,
+    Component,
     link,
     onLinkMouseEnter,
     onLinkMouseLeave,

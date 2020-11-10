@@ -1,14 +1,7 @@
 import styled from 'styled-components'
-import { IConfig } from '../../types'
+import { ICanvasOuterProps } from '../../src'
 
-export interface ICanvasOuterDefaultProps {
-  className?: string
-  config: IConfig
-  children: any
-  ref?: React.Ref<any>
-}
-
-export const CanvasOuterDefault = styled.div<ICanvasOuterDefaultProps>`
+export const CanvasOuterDefault = styled.div<ICanvasOuterProps>`
   position: relative;
   background-size: 20px 20px;
   background-color: rgba(0,0,0,0.08);

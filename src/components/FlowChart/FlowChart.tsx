@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {
-  CanvasInnerDefault, CanvasOuterDefault, CanvasWrapper, ICanvasInnerDefaultProps, ICanvasOuterDefaultProps, IChart, IConfig, ILink,
-  ILinkDefaultProps, INodeDefaultProps, INodeInnerDefaultProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
+  CanvasWrapper, ICanvasInnerProps, ICanvasOuterProps, IChart, IConfig, ILink,
+  ILinkDefaultProps, INodeProps, INodeInnerProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
   IOnDragCanvasStop, IOnDragNode, IOnDragNodeStop, IOnLinkCancel, IOnLinkClick, IOnLinkComplete, IOnLinkMouseEnter,
   IOnLinkMouseLeave, IOnLinkMove, IOnLinkStart, IOnNodeClick, IOnNodeDoubleClick, IOnNodeMouseEnter, IOnNodeMouseLeave, IOnNodeSizeChange,
-  IOnPortPositionChange, IOnZoomCanvas, IPortDefaultProps, IPortsDefaultProps, ISelectedOrHovered, LinkDefault, LinkWrapper, NodeDefault, NodeInnerDefault, NodeWrapper, PortDefault, PortsDefault,
+  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
 } from '../../'
 import { getMatrix } from './utils/grid'
 
@@ -33,12 +33,12 @@ export interface IFlowChartCallbacks {
 }
 
 export interface IFlowChartComponents {
-  CanvasOuter?: React.FunctionComponent<ICanvasOuterDefaultProps>
-  CanvasInner?: React.FunctionComponent<ICanvasInnerDefaultProps>
-  NodeInner?: React.FunctionComponent<INodeInnerDefaultProps>
+  CanvasOuter: React.FunctionComponent<ICanvasOuterProps>
+  CanvasInner: React.FunctionComponent<ICanvasInnerProps>
+  NodeInner: React.FunctionComponent<INodeInnerProps>
   Ports?: React.FunctionComponent<IPortsDefaultProps>
-  Port?: React.FunctionComponent<IPortDefaultProps>
-  Node?: React.FunctionComponent<INodeDefaultProps>
+  Port: React.FunctionComponent<IPortProps>
+  Node: React.FunctionComponent<INodeProps>
   Link?: React.FunctionComponent<ILinkDefaultProps>
 }
 
@@ -55,7 +55,7 @@ export interface IFlowChartProps {
   /**
    * Custom components
    */
-  Components?: IFlowChartComponents
+  Components: IFlowChartComponents
   /**
    * Other config. This will be passed into all components and actions.
    * Don't store state here as it may trigger re-renders
@@ -92,14 +92,14 @@ export const FlowChart = (props: IFlowChartProps) => {
       onZoomCanvas,
     },
     Components: {
-      CanvasOuter = CanvasOuterDefault,
-      CanvasInner = CanvasInnerDefault,
-      NodeInner = NodeInnerDefault,
+      CanvasOuter,
+      CanvasInner,
+      NodeInner,
       Ports = PortsDefault,
-      Port = PortDefault,
-      Node = NodeDefault,
+      Port,
+      Node,
       Link = LinkDefault,
-    } = {},
+    },
     config = {},
   } = props
   const { links, nodes, selected, hovered, offset, scale } = chart

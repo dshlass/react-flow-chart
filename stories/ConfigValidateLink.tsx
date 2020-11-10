@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FlowChartWithState } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const Note = styled.div`
   position: absolute;
@@ -18,6 +19,7 @@ export const ConfigValidateLinkDemo = () => {
   return (
     <Page>
       <FlowChartWithState
+        Components={DefaultComponents}
         initialValue={chartSimple}
         config={ {
           validateLink: ({ linkId, fromNodeId, fromPortId, toNodeId, toPortId, chart }): boolean => {

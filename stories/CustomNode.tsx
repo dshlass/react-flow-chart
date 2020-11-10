@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { FlowChartWithState, INodeDefaultProps } from '../src'
+import { FlowChartWithState, INodeProps } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const DarkBox = styled.div`
   position: absolute;
@@ -32,7 +33,7 @@ const Circle = styled.div`
  * Make sure it has the same prop signature
  * You'll need to add {...otherProps} so the event listeners are added to your component
  */
-const NodeCustom = React.forwardRef(({ node, children, ...otherProps }: INodeDefaultProps, ref: React.Ref<HTMLDivElement>) => {
+const NodeCustom = React.forwardRef(({ node, children, ...otherProps }: INodeProps, ref: React.Ref<HTMLDivElement>) => {
   if (node.type === 'output-only') {
     return (
       <DarkBox ref={ref} {...otherProps}>
@@ -54,6 +55,7 @@ export const CustomNodeDemo = () => {
       <FlowChartWithState
         initialValue={chartSimple}
         Components={ {
+          ...DefaultComponents,
           Node: NodeCustom,
         }}
       />

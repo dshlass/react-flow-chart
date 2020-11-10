@@ -1,10 +1,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { FlowChartWithState, ICanvasOuterDefaultProps } from '../src'
+import { FlowChartWithState, ICanvasOuterProps } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
-const CanvasOuterCustom = styled.div<ICanvasOuterDefaultProps>`
+const CanvasOuterCustom = styled.div<ICanvasOuterProps>`
   position: relative;
   background-size: 10px 10px;
   background-color: #4f6791;
@@ -23,6 +24,7 @@ export const CustomCanvasOuterDemo = () => {
       <FlowChartWithState
         initialValue={chartSimple}
         Components={ {
+          ...DefaultComponents,
           CanvasOuter: CanvasOuterCustom,
         }}
       />

@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { FlowChartWithState, IPortDefaultProps } from '../src'
+import { FlowChartWithState, IPortProps } from '../src'
 import { Page } from './components'
 import { chartSimple } from './misc/exampleChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 const PortDefaultOuter = styled.div`
   width: 24px;
@@ -14,7 +15,7 @@ const PortDefaultOuter = styled.div`
   align-items: center;
 `
 
-const PortCustom = (props: IPortDefaultProps) => (
+const PortCustom = (props: IPortProps) => (
   <PortDefaultOuter>
     { props.port.properties && props.port.properties.value === 'yes' && (
       <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
@@ -40,6 +41,7 @@ export const CustomPortDemo = () => {
       <FlowChartWithState
         initialValue={chartSimple}
         Components={ {
+          ...DefaultComponents,
           Port: PortCustom,
         }}
       />

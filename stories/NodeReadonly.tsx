@@ -2,6 +2,7 @@ import * as React from 'react'
 import { FlowChartWithState } from '../src'
 import { Code, Content, Message, Page, Sidebar } from './components'
 import { chartSimple } from './misc/exampleReadonlyNodesChartState'
+import { DefaultComponents } from './misc/defaultComponents'
 
 export const NodeReadonly = () => {
   const code = {
@@ -13,7 +14,10 @@ export const NodeReadonly = () => {
   return (
     <Page>
       <Content>
-        <FlowChartWithState initialValue={chartSimple} />
+        <FlowChartWithState
+          Components={DefaultComponents} 
+          initialValue={chartSimple} 
+        />
       </Content>
 
       <Sidebar>
