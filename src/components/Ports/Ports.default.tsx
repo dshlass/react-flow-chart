@@ -1,16 +1,17 @@
 import * as React from 'react'
 import ResizeObserver from 'react-resize-observer'
-import { IConfig, INode, ISize, PortsGroupDefault } from '../../'
+import { IConfig, INode, ISize, IPortsGroupProps } from '../../'
 
 export interface IPortsDefaultProps {
   className?: string
   config: IConfig
   node: INode
   children: Array<React.ReactElement<any>>
-  onResize: (size: ISize) => void
+  onResize: (size: ISize) => void,
+  PortsGroup: React.FunctionComponent<IPortsGroupProps>
 }
 
-export const PortsDefault = ({ children, config, onResize, className }: IPortsDefaultProps) => {
+export const PortsDefault = ({ children, config, onResize, PortsGroup, className }: IPortsDefaultProps) => {
   const [ top, setTop ] = React.useState(0)
   const [ bottom, setBottom ] = React.useState(0)
   const [ right, setRight ] = React.useState(0)
@@ -32,22 +33,22 @@ export const PortsDefault = ({ children, config, onResize, className }: IPortsDe
 
   return (
     <div className={className}>
-      <PortsGroupDefault config={config} side="top">
+      <PortsGroup config={config} side="top">
         <ResizeObserver onResize={(rect) => { setTop(rect.width) }} />
         {children.filter((child) => ['input', 'top'].includes(child.props.port.type))}
-      </PortsGroupDefault>
-      <PortsGroupDefault config={config} side="bottom">
+      </PortsGroup>
+      <PortsGroup config={config} side="bottom">
         <ResizeObserver onResize={(rect) => { setBottom(rect.width) }} />
         {children.filter((child) => ['output', 'bottom'].includes(child.props.port.type))}
-      </PortsGroupDefault>
-      <PortsGroupDefault config={config} side="right">
+      </PortsGroup>
+      <PortsGroup config={config} side="right">
         <ResizeObserver onResize={(rect) => { setRight(rect.height) }} />
         {children.filter((child) => ['right'].includes(child.props.port.type))}
-      </PortsGroupDefault>
-      <PortsGroupDefault config={config} side="left">
+      </PortsGroup>
+      <PortsGroup config={config} side="left">
         <ResizeObserver onResize={(rect) => { setLeft(rect.height) }} />
         {children.filter((child) => ['left'].includes(child.props.port.type))}
-      </PortsGroupDefault>
+      </PortsGroup>
     </div>
   )
 }

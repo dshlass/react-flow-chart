@@ -19,6 +19,7 @@ import {
   IOnNodeSizeChange,
   IOnPortPositionChange,
   IPortProps,
+  IPortsGroupProps,
   IPortsDefaultProps,
   IPosition,
   ISelectedOrHovered,
@@ -41,6 +42,7 @@ export interface INodeWrapperProps {
   isSelected: boolean
   NodeInner: React.FunctionComponent<INodeInnerProps>
   Ports: React.FunctionComponent<IPortsDefaultProps>
+  PortsGroup: React.FunctionComponent<IPortsGroupProps>
   Port: React.FunctionComponent<IPortProps>
   onPortPositionChange: IOnPortPositionChange
   onLinkStart: IOnLinkStart
@@ -70,6 +72,7 @@ export const NodeWrapper = ({
   onNodeMouseLeave,
   NodeInner,
   Ports,
+  PortsGroup,
   Port,
   offset,
   selected,
@@ -167,7 +170,7 @@ export const NodeWrapper = ({
       />
       <NodeInner node={node} config={config} />
 
-      <Ports node={node} config={config} onResize={setPortsSize}>
+      <Ports node={node} config={config} onResize={setPortsSize} PortsGroup={PortsGroup}>
         {Object.keys(node.ports).map((portId) => (
           <PortWrapper
             config={config}

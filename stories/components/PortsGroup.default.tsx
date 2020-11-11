@@ -1,13 +1,7 @@
 import styled, { css } from 'styled-components'
-import { IConfig } from '../../'
+import { IPortsGroupProps } from '../../'
 
-export interface IPortsGroupDefaultProps {
-  className?: string
-  config: IConfig
-  side: 'top' | 'bottom' | 'left' | 'right'
-}
-
-export const PortsGroupDefault = styled.div<IPortsGroupDefaultProps>`
+export const PortsGroupDefault = styled.div<IPortsGroupProps>`
   position: absolute;
   display: flex;
   justify-content: center;

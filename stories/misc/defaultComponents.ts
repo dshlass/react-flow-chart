@@ -3,6 +3,7 @@ import {
   CanvasOuterDefault,
   NodeDefault, 
   NodeInnerDefault, 
+  PortsGroupDefault, 
   PortDefault, 
 } from '../components'
 
@@ -11,5 +12,6 @@ export const DefaultComponents = {
   CanvasInner: CanvasInnerDefault,
   NodeInner: NodeInnerDefault,
   Port: PortDefault,
+  PortsGroup: PortsGroupDefault,
   Node: NodeDefault,
 }

@@ -4,7 +4,7 @@ import {
   ILinkDefaultProps, INodeProps, INodeInnerProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
   IOnDragCanvasStop, IOnDragNode, IOnDragNodeStop, IOnLinkCancel, IOnLinkClick, IOnLinkComplete, IOnLinkMouseEnter,
   IOnLinkMouseLeave, IOnLinkMove, IOnLinkStart, IOnNodeClick, IOnNodeDoubleClick, IOnNodeMouseEnter, IOnNodeMouseLeave, IOnNodeSizeChange,
-  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
+  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsGroupProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
 } from '../../'
 import { getMatrix } from './utils/grid'
 
@@ -37,6 +37,7 @@ export interface IFlowChartComponents {
   CanvasInner: React.FunctionComponent<ICanvasInnerProps>
   NodeInner: React.FunctionComponent<INodeInnerProps>
   Ports?: React.FunctionComponent<IPortsDefaultProps>
+  PortsGroup: React.FunctionComponent<IPortsGroupProps>
   Port: React.FunctionComponent<IPortProps>
   Node: React.FunctionComponent<INodeProps>
   Link?: React.FunctionComponent<ILinkDefaultProps>
@@ -96,6 +97,7 @@ export const FlowChart = (props: IFlowChartProps) => {
       CanvasInner,
       NodeInner,
       Ports = PortsDefault,
+      PortsGroup,
       Port,
       Node,
       Link = LinkDefault,
@@ -185,6 +187,7 @@ export const FlowChart = (props: IFlowChartProps) => {
             hoveredLink={hoveredLink}
             NodeInner={NodeInner}
             Ports={Ports}
+            PortsGroup={PortsGroup}
             Port={Port}
             {...nodeCallbacks}
             {...portCallbacks}

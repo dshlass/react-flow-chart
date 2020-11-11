@@ -38,6 +38,12 @@ export interface INodeInnerProps {
   node: INode
 }
 
+export interface IPortsGroupProps {
+  className?: string
+  config: IConfig
+  side: 'top' | 'bottom' | 'left' | 'right'
+}
+
 export interface IPortProps {
   className?: string
   config: IConfig
