@@ -1,5 +1,10 @@
 # This is a fork of MrBlenny's `react-flow-chart`
-The aim of this fork is to remove the dependency on `style-components` and get it into a production-ready state. The fork was made from version 0.0.14.
+This repo replaces the curved links between ports with straight lines. In addition, arrowheads were added to provide visual directions of flow.
+
+**The directional links do not work on the Right Angle Paths option** 
+
+**Forked from [https://github.com/kaliberjs/react-flow-chart]**
+**The aim of this fork is to remove the dependency on `style-components` and get it into a production-ready state. The fork was made from version 0.0.14.**
 
 Original library: [https://github.com/MrBlenny/react-flow-chart]
 
@@ -9,8 +14,6 @@ Original library: [https://github.com/MrBlenny/react-flow-chart]
 yarn install
 yarn start:storybook
 ```
-
-![](https://media.giphy.com/media/3o6MbrRTzAPLdJgL5u/giphy.gif)
 
 ## Disclaimer
 This library is intended for internal use, we provide no support, use at your own risk.
@@ -28,7 +31,8 @@ This library is intended for internal use, we provide no support, use at your ow
 [![CircleCI](https://circleci.com/gh/MrBlenny/react-flow-chart.svg?style=svg)](https://circleci.com/gh/MrBlenny/react-flow-chart)
 
 - [X] Dragabble Nodes and Canvas
-- [x] Create curved links between ports
+- ~~[x] Create curved links between ports~~
+- [x] Create straight links between ports
 - [x] Custom components for Canvas, Links, Ports, Nodes
 - [X] React state container
 - [X] Update state on Select/Hover nodes, ports and links
@@ -38,7 +42,7 @@ This library is intended for internal use, we provide no support, use at your ow
 - [ ] Ctrl+z/Ctrl+y history
 - [X] Read-only mode
 - [ ] Redux state container
-- [ ] Arrow heads on links
+- [X] Arrow heads on links
 - [ ] Docs
 
 ### [Storybook Demo](https://mrblenny.github.io/react-flow-chart/index.html?selectedKind=With%20Sidebar&selectedStory=default&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook-addon-viewport%2Faddon-panel)
