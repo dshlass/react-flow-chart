@@ -1,13 +1,13 @@
 {
-  "name": "@kaliber/react-flow-chart",
-  "version": "1.0.2",
+  "name": "@dshlass/react-flow-chart",
+  "version": "1.0.0",
   "description": "A flexible, stateless flow chart library for react.",
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "repository": "https://github.com/kaliberjs/react-flow-chart.git",
+  "repository": "https://github.com/dshlass/react-flow-chart.git",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@storybook/addon-centered": "^5.3.18",
