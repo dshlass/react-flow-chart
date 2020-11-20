@@ -41,9 +41,22 @@ export const RegularLink = ({
       }}
       className={className}
     >
+      <defs>
+        //This marker is the center arrow. 
+        <marker
+          id={`arrowHead-${linkColor}`}
+          orient="auto"
+          markerWidth="8"
+          markerHeight="12"
+          refX="4"
+          refY="6"
+        >
+          <path d="M0,0 V12 L8,6 Z" fill={linkColor} />
+        </marker>
+      </defs>
       <circle r="4" cx={startPos.x} cy={startPos.y} fill={linkColor} />
       {/* Main line */}
-      <path d={points} stroke={linkColor} strokeWidth="3" fill="none" />
+      <path d={points} stroke={linkColor} strokeWidth="3" fill="none" markerMid={`url(#arrowHead-${linkColor})`}/>
       {/* Thick line to make selection easier */}
       <path
         d={points}
