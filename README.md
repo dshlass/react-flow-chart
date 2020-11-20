@@ -3,6 +3,8 @@ This repo replaces the curved links between ports with straight lines. In additi
 
 **The directional links do not work on the Right Angle Paths option** 
 
+### [Storybook Demo](https://stoic-northcutt-386ed6.netlify.app/?path=/story/state--internal-react-statea)
+
 **Forked from [https://github.com/kaliberjs/react-flow-chart]**
 **The aim of this fork is to remove the dependency on `style-components` and get it into a production-ready state. The fork was made from version 0.0.14.**
 
@@ -45,9 +47,9 @@ This library is intended for internal use, we provide no support, use at your ow
 - [X] Arrow heads on links
 - [ ] Docs
 
-### [Storybook Demo](https://mrblenny.github.io/react-flow-chart/index.html?selectedKind=With%20Sidebar&selectedStory=default&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook-addon-viewport%2Faddon-panel)
+### [ORIGINAL Storybook Demo](https://mrblenny.github.io/react-flow-chart/index.html?selectedKind=With%20Sidebar&selectedStory=default&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook-addon-viewport%2Faddon-panel)
 
-### [CodeSandbox Demo](https://codesandbox.io/s/4w46wv71o7)
+### [ORIGINAL CodeSandbox Demo](https://codesandbox.io/s/4w46wv71o7)
 
 This project aims to build a highly customisable, declarative flow chart library. Critically, you control the state. Pick from Redux, MobX, React or any other state managment library - simply pass in the current state and hook up the callbacks.
 
