@@ -32,6 +32,14 @@ export const generateCurvePath = (startPos: IPosition, endPos: IPosition): strin
   return `M${start.x},${start.y} C ${start.x + curveX},${start.y + curveY} ${end.x - curveX},${end.y - curveY} ${end.x},${end.y}`
 }
 
+export const generateStraightLine = (startPos: IPosition, endPos: IPosition): string => {
+
+  const middleX = (endPos.x + startPos.x)/2;
+  const middleY = (endPos.y + startPos.y)/2
+
+  return `M${startPos.x},${startPos.y} ${middleX},${middleY} ${endPos.x},${endPos.y}`
+}
+
 const finder = PF.JumpPointFinder({
   heuristic: PF.Heuristic.manhattan,
   diagonalMovement: PF.DiagonalMovement.Never,
