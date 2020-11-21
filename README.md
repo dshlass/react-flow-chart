@@ -1,4 +1,4 @@
-# This is a fork of MrBlenny's `react-flow-chart`
+# This is a fork of kaliberjs's fork of MrBlenny's `react-flow-chart`
 This repo replaces the curved links between ports with straight lines. In addition, arrowheads were added to provide visual directions of flow.
 
 **The directional links do not work on the Right Angle Paths option** 
