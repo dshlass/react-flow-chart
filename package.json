@@ -1,6 +1,6 @@
 {
   "name": "@dshlass/react-flow-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flexible, stateless flow chart library for react.",
   "main": "src/index.js",
   "publishConfig": {
