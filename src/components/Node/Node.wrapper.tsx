@@ -177,6 +177,7 @@ export const NodeWrapper = ({
             key={portId}
             offset={offset}
             selected={selected}
+            nodeSelected={isSelected}
             selectedLink={selectedLink}
             hoveredLink={hoveredLink}
             hovered={hovered}

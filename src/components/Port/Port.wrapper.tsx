@@ -22,6 +22,7 @@ export interface IPortWrapperProps {
   hovered: ISelectedOrHovered | undefined
   selectedLink: ILink | undefined
   hoveredLink: ILink | undefined
+  nodeSelected: boolean
   port: IPort
   node: INode
   portsSize: ISize
@@ -35,6 +36,14 @@ export interface IPortWrapperProps {
   onLinkComplete: IOnLinkComplete
 }
 
+interface IStyling {
+  top?:string
+  right?:string
+  left?:string
+  bottom?:string
+  transform?:string
+}
+
 export class PortWrapper extends React.Component<IPortWrapperProps> {
   public static contextType = CanvasContext
   public context!: React.ContextType<typeof CanvasContext>
@@ -43,6 +52,23 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
 
   public componentDidMount () {
     this.updatePortPosition()
+  }
+  
+  public getStyle(): IStyling | {}  {
+    const {port: {type}} = this.props
+      if (type === 'top' || type === 'input') {
+        return { top: '-50px',  bottom: 0, left: '50%', transform: 'translateX(-50%)'}
+      }
+      if (type === 'bottom' || type === 'output') {
+        return { bottom: '-50px', left: '50%', transform: 'translateX(-50%)'}
+      }
+      if (type === 'left') {
+        return {top: '-13px', left: '-50px'}
+      }
+      if (type === 'right') {
+        return { top: '-13px', right: '-50px'}
+      }
+    else return {}
   }
 
   public componentDidUpdate (prevProps: IPortWrapperProps) {
@@ -128,15 +154,16 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
       node,
       Component,
       config,
+      nodeSelected
     } = this.props
-
+    
     return (
       <div
         data-port-id={port.id}
         data-node-id={node.id}
         onMouseDown={this.onMouseDown}
         ref={this.nodeRef}
-        style={style}
+        style={{...style, position: 'relative' }}
       >
         <Component
           config={config}
@@ -157,6 +184,7 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
               : false
           }
         />
+        {nodeSelected && <p style={{position: 'absolute', ...this.getStyle()}}>{port.type}</p>}
       </div>
     )
   }
