@@ -32,6 +32,7 @@ export type INode<NodeProps = undefined, PortProps = undefined> = {
   id: string
   type: string
   position: IPosition
+  value?: any,
   orientation?: number
   readonly?: boolean
   ports: {
@@ -47,8 +48,9 @@ export type INode<NodeProps = undefined, PortProps = undefined> = {
 
 export type IPort<PortProps = undefined> = {
   id: string
-  type: string
-  value?: string
+  type: 'input' | 'output'
+  location: 'top' | 'bottom' | 'left' | 'right'
+  value?: any,
   /** System Temp */
   position?: IPosition,
 } & (PortProps extends undefined ? {

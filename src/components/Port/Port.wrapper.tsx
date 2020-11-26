@@ -55,17 +55,17 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
   }
   
   public getStyle(): IStyling | {}  {
-    const {port: {type}} = this.props
-      if (type === 'top' || type === 'input') {
+    const {port: {location}} = this.props
+      if (location === 'top') {
         return { top: '-50px',  bottom: 0, left: '50%', transform: 'translateX(-50%)'}
       }
-      if (type === 'bottom' || type === 'output') {
+      if (location === 'bottom') {
         return { bottom: '-50px', left: '50%', transform: 'translateX(-50%)'}
       }
-      if (type === 'left') {
+      if (location === 'left') {
         return {top: '-13px', left: '-50px'}
       }
-      if (type === 'right') {
+      if (location === 'right') {
         return { top: '-13px', right: '-50px'}
       }
     else return {}
@@ -74,7 +74,7 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
   public componentDidUpdate (prevProps: IPortWrapperProps) {
     // Update port position after a re-render if there are more ports on the same side
     // or if node.size has changed
-    if (this.portsOfType(this.props) !== this.portsOfType(prevProps)
+    if (this.portsOfLocation(this.props) !== this.portsOfLocation(prevProps)
         || !isEqual(this.props.node.size, prevProps.node.size)
         || !isEqual(this.props.portsSize, prevProps.portsSize)) {
       this.updatePortPosition()
@@ -202,8 +202,8 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
     }
   }
 
-  private portsOfType (props: IPortWrapperProps) {
-    const { port: { type }, node: { ports } } = props
-    return Object.values(ports).reduce((count, port) => port.type === type ? count + 1 : count, 0)
+  private portsOfLocation (props: IPortWrapperProps) {
+    const { port: { location }, node: { ports } } = props
+    return Object.values(ports).reduce((count, port) => port.location === location ? count + 1 : count, 0)
   }
 }

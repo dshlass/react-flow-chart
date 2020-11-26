@@ -35,19 +35,19 @@ export const PortsDefault = ({ children, config, onResize, PortsGroup, className
     <div className={className}>
       <PortsGroup config={config} side="top">
         <ResizeObserver onResize={(rect) => { setTop(rect.width) }} />
-        {children.filter((child) => ['input', 'top'].includes(child.props.port.type))}
+        {children.filter((child) => ['top'].includes(child.props.port.location))}
       </PortsGroup>
       <PortsGroup config={config} side="bottom">
         <ResizeObserver onResize={(rect) => { setBottom(rect.width) }} />
-        {children.filter((child) => ['output', 'bottom'].includes(child.props.port.type))}
+        {children.filter((child) => ['bottom'].includes(child.props.port.location))}
       </PortsGroup>
       <PortsGroup config={config} side="right">
         <ResizeObserver onResize={(rect) => { setRight(rect.height) }} />
-        {children.filter((child) => ['right'].includes(child.props.port.type))}
+        {children.filter((child) => ['right'].includes(child.props.port.location))}
       </PortsGroup>
       <PortsGroup config={config} side="left">
         <ResizeObserver onResize={(rect) => { setLeft(rect.height) }} />
-        {children.filter((child) => ['left'].includes(child.props.port.type))}
+        {children.filter((child) => ['left'].includes(child.props.port.location))}
       </PortsGroup>
     </div>
   )
