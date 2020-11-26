@@ -6,6 +6,7 @@ import { CustomCanvasOuterDemo } from './CustomCanvasOuter'
 import { CustomGraphTypes } from './CustomGraphTypes'
 import { CustomLinkDemo } from './CustomLink'
 import { CustomNodeDemo } from './CustomNode'
+import {CustomPortLabels} from './CustomPortLabels'
 import { CustomNodeInnerDemo } from './CustomNodeInner'
 import { CustomPortDemo } from './CustomPort'
 import { DragAndDropSidebar } from './DragAndDropSidebar'
@@ -32,6 +33,7 @@ storiesOf('Custom Components', module)
   .add('Canvas Outer', CustomCanvasOuterDemo)
   .add('Canvas Link', () => <CustomLinkDemo />)
   .add('Link Colors', () => <LinkColors />)
+  .add('Port Labels', CustomPortLabels)
 
 storiesOf('Stress Testing', module).add('default', StressTestDemo)
 
