@@ -21,22 +21,26 @@ const getChart = (rows: number, cols: number) => {
       ports: {
         port1: {
           id: 'port1',
-          type: 'top',
+          type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
-          type: 'bottom',
+          type: 'output',
+          location: 'bottom',
         },
         port3: {
           id: 'port3',
-          type: 'right',
+          type: 'output',
+          location: 'right',
         },
         port4: {
           id: 'port4',
-          type: 'left',
+          type: 'output',
+          location: 'left',
         },
       },
-    })), 'id'),
+    })), 'id') as any,
     links: keyBy(compact(flatMap(xyGrid, ({ x, y }, idx) => {
       const next = xyGrid[idx + 1]
       if (next) {

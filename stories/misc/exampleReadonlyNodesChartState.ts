@@ -19,6 +19,7 @@ export const chartSimple: IChart = {
         port1: {
           id: 'port1',
           type: 'output',
+          location: 'bottom',
           properties: {
             value: 'yes',
           },
@@ -26,6 +27,7 @@ export const chartSimple: IChart = {
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
           properties: {
             value: 'no',
           },
@@ -43,10 +45,12 @@ export const chartSimple: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
         },
       },
     },
@@ -61,10 +65,12 @@ export const chartSimple: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
         },
       },
     },
@@ -80,10 +86,12 @@ export const chartSimple: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
         },
       },
     },

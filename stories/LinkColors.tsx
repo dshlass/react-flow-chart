@@ -22,6 +22,7 @@ const chartSimpleWithLinkColors: IChart = {
         port1: {
           id: 'port1',
           type: 'output',
+          location: 'bottom',
           properties: {
             value: 'no',
             linkColor: '#FFCC00',
@@ -40,10 +41,12 @@ const chartSimpleWithLinkColors: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
           properties: {
             linkColor: '#63D471',
           },
@@ -51,6 +54,7 @@ const chartSimpleWithLinkColors: IChart = {
         port3: {
           id: 'port3',
           type: 'output',
+          location: 'bottom',
           properties: {
             linkColor: '#F8333C',
           },
@@ -68,10 +72,12 @@ const chartSimpleWithLinkColors: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
         },
       },
     },
@@ -86,10 +92,12 @@ const chartSimpleWithLinkColors: IChart = {
         port1: {
           id: 'port1',
           type: 'input',
+          location: 'top',
         },
         port2: {
           id: 'port2',
           type: 'output',
+          location: 'bottom',
         },
       },
     },

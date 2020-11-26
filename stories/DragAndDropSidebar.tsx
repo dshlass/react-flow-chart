@@ -28,14 +28,16 @@ export const DragAndDropSidebar = () => (
         ports={ {
           port1: {
             id: 'port1',
-            type: 'top',
+            type: 'input',
+            location: 'top',
             properties: {
               custom: 'property',
             },
           },
           port2: {
             id: 'port2',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
             properties: {
               custom: 'property',
             },
@@ -50,7 +52,8 @@ export const DragAndDropSidebar = () => (
         ports={ {
           port1: {
             id: 'port1',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
             properties: {
               custom: 'property',
             },
@@ -62,14 +65,16 @@ export const DragAndDropSidebar = () => (
         ports={ {
           port1: {
             id: 'port1',
-            type: 'left',
+            type: 'output',
+            location: 'left',
             properties: {
               custom: 'property',
             },
           },
           port2: {
             id: 'port2',
-            type: 'right',
+            type: 'output',
+            location: 'right',
             properties: {
               custom: 'property',
             },
@@ -81,20 +86,23 @@ export const DragAndDropSidebar = () => (
         ports={ {
           port1: {
             id: 'port1',
-            type: 'left',
-
+            type: 'output',
+            location: 'left',
           },
           port2: {
             id: 'port2',
-            type: 'right',
+            type: 'output',
+            location: 'right',
           },
           port3: {
             id: 'port3',
-            type: 'top',
+            type: 'input',
+            location: 'top',
           },
           port4: {
             id: 'port4',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
           },
         }}
       />
@@ -103,52 +111,63 @@ export const DragAndDropSidebar = () => (
         ports={ {
           port1: {
             id: 'port1',
-            type: 'left',
-
+            type: 'output',
+            location: 'left',
           },
           port2: {
             id: 'port2',
-            type: 'right',
+            type: 'output',
+            location: 'right',
           },
           port3: {
             id: 'port3',
-            type: 'top',
+            type: 'input',
+            location: 'top',
           },
           port4: {
             id: 'port4',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
           },
           port5: {
             id: 'port5',
-            type: 'left',
+            type: 'output',
+            location: 'left',
           },
           port6: {
             id: 'port6',
-            type: 'right',
+            type: 'output',
+            location: 'right',
           },
           port7: {
             id: 'port7',
-            type: 'top',
+            type: 'input',
+            location: 'top',
           },
           port8: {
             id: 'port8',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
           },
           port9: {
             id: 'port9',
-            type: 'left',
+            type: 'output',
+            location: 'bottom',
           },
           port10: {
             id: 'port10',
-            type: 'right',
+            type: 'output',
+            location: 'right',
           },
           port11: {
             id: 'port11',
-            type: 'top',
+            type: 'input',
+            location: 'top',
           },
           port12: {
             id: 'port12',
-            type: 'bottom',
+            type: 'output',
+            location: 'bottom',
           },
         }}
       />

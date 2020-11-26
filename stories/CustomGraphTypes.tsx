@@ -25,11 +25,13 @@ export const CustomGraphTypes = () => {
             id: 'port1',
             type: 'output',
             properties: 1,
+            location: 'bottom'
           },
           port2: {
             id: 'port2',
             type: 'output',
             properties: 2,
+            location: 'bottom'
           },
         },
       },
@@ -46,11 +48,13 @@ export const CustomGraphTypes = () => {
             id: 'port1',
             type: 'input',
             properties: 4,
+            location: 'top'
           },
           port2: {
             id: 'port2',
             type: 'output',
             properties: 3,
+            location: 'bottom'
           },
         },
       },
@@ -67,11 +71,13 @@ export const CustomGraphTypes = () => {
             id: 'port1',
             type: 'input',
             properties: 2,
+            location: 'top'
           },
           port2: {
             id: 'port2',
             type: 'output',
             properties: 1,
+            location: 'bottom'
           },
         },
       },
@@ -88,11 +94,13 @@ export const CustomGraphTypes = () => {
             id: 'port1',
             type: 'input',
             properties: 0,
+            location: 'top'
           },
           port2: {
             id: 'port2',
             type: 'output',
             properties: -1,
+            location: 'bottom'
           },
         },
       },
