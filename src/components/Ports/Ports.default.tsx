@@ -1,6 +1,6 @@
 import * as React from 'react'
 import ResizeObserver from 'react-resize-observer'
-import { IConfig, INode, ISize, IPortsGroupProps } from '../../'
+import { IConfig, INode, IPortsGroupProps, ISize } from '../../'
 
 export interface IPortsDefaultProps {
   className?: string

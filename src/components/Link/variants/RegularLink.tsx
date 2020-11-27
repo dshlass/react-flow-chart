@@ -42,7 +42,7 @@ export const RegularLink = ({
       className={className}
     >
       <defs>
-        //This marker is the center arrow. 
+        //This marker is the center arrow.
         <marker
           id={`arrowHead-${linkColor}`}
           orient="auto"

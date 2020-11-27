@@ -1,7 +1,7 @@
 import { isEqual } from 'lodash'
 import * as React from 'react'
 import { v4 } from 'uuid'
-import { IConfig, ILink, INode, IOnLinkCancel, IOnLinkComplete, IOnLinkMove, IOnLinkStart, IOnPortPositionChange, IPort, IPosition, ISelectedOrHovered, ISize, IPortProps } from '../../'
+import { IConfig, ILink, INode, IOnLinkCancel, IOnLinkComplete, IOnLinkMove, IOnLinkStart, IOnPortPositionChange, IPort, IPortProps, IPosition, ISelectedOrHovered, ISize } from '../../'
 import CanvasContext from '../Canvas/CanvasContext'
 
 /** Construct the composed path by traversing parentElements */
@@ -36,7 +36,7 @@ export interface IPortWrapperProps {
   onLinkComplete: IOnLinkComplete
 }
 
-type IPortLabel =  React.FunctionComponent | React.ReactElement
+type IPortLabel = React.FunctionComponent | React.ReactElement
 
 export class PortWrapper extends React.Component<IPortWrapperProps> {
   public static contextType = CanvasContext
@@ -47,38 +47,37 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
   public componentDidMount () {
     this.updatePortPosition()
   }
-  
-  public portLabel(): IPortLabel  {
-    const {port: {id, location, type}, config} = this.props
-      if (location === 'top') {
-        if (config.portLabel && config.portLabel.Top) {
-          const {Top} = config.portLabel 
-          return <Top>{id}</Top>
-        }
-        return <p style={{position: 'absolute',margin: 0, top: '-50px', transform: 'rotate(-45deg)'}}>{id}</p>
+
+  public portLabel (): IPortLabel {
+    const { port: { id, location, type }, config } = this.props
+    if (location === 'top') {
+      if (config.portLabel && config.portLabel.Top) {
+        const { Top } = config.portLabel
+        return <Top>{id}</Top>
       }
-      if (location === 'bottom') {
-        if(config.portLabel && config.portLabel.Bottom) {
-          const {Bottom} = config.portLabel 
-          return <Bottom>{id}</Bottom>
-        }
-        return <p style={{position: 'absolute', margin: 0, bottom: '-50px', transform: 'translateX(-50%) rotate(-45deg)'}}>{id}</p>
+      return <p style={{ position: 'absolute',margin: 0, top: '-50px', transform: 'rotate(-45deg)' }}>{id}</p>
+    }
+    if (location === 'bottom') {
+      if (config.portLabel && config.portLabel.Bottom) {
+        const { Bottom } = config.portLabel
+        return <Bottom>{id}</Bottom>
       }
-      if (location === 'left') {
-        if(config.portLabel && config.portLabel.Left) {
-          const {Left} = config.portLabel 
-          return <Left>{id}</Left>
-        }
-        return <p style={{position: 'absolute', margin: 0, left: '-50px', transform: 'translateY(-50%) rotate(-45deg)'}}>{id}</p>
+      return <p style={{ position: 'absolute', margin: 0, bottom: '-50px', transform: 'translateX(-50%) rotate(-45deg)' }}>{id}</p>
+    }
+    if (location === 'left') {
+      if (config.portLabel && config.portLabel.Left) {
+        const { Left } = config.portLabel
+        return <Left>{id}</Left>
       }
-      if (location === 'right') {
-        if(config.portLabel && config.portLabel.Right) {
-          const {Right} = config.portLabel 
-          return <Right>{id}</Right>
-        }
-        return <p style={{position: 'absolute', margin: 0, right: '-50px', top: 0, transform: 'translateY(-50%) rotate(-45deg)'}}>{id}</p>
+      return <p style={{ position: 'absolute', margin: 0, left: '-50px', transform: 'translateY(-50%) rotate(-45deg)' }}>{id}</p>
+    }
+    if (location === 'right') {
+      if (config.portLabel && config.portLabel.Right) {
+        const { Right } = config.portLabel
+        return <Right>{id}</Right>
       }
-    else return <p style={{position: 'absolute', margin: 0, top: 0}}>{type}</p>
+      return <p style={{ position: 'absolute', margin: 0, right: '-50px', top: 0, transform: 'translateY(-50%) rotate(-45deg)' }}>{id}</p>
+    } else return <p style={{ position: 'absolute', margin: 0, top: 0 }}>{type}</p>
   }
 
   public componentDidUpdate (prevProps: IPortWrapperProps) {
@@ -164,16 +163,16 @@ export class PortWrapper extends React.Component<IPortWrapperProps> {
       node,
       Component,
       config,
-      nodeSelected
+      nodeSelected,
     } = this.props
-    
+
     return (
       <div
         data-port-id={port.id}
         data-node-id={node.id}
         onMouseDown={this.onMouseDown}
         ref={this.nodeRef}
-        style={{position: 'relative', ...style }}
+        style={{ position: 'relative', ...style }}
       >
         <Component
           config={config}

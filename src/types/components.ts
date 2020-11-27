@@ -1,4 +1,4 @@
-import { IConfig, IOnCanvasClick, INode, IPort } from './'
+import { IConfig, INode, IOnCanvasClick, IPort } from './'
 
 export interface ICanvasInnerProps {
   className?: string

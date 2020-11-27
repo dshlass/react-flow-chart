@@ -34,8 +34,8 @@ export const generateCurvePath = (startPos: IPosition, endPos: IPosition): strin
 
 export const generateStraightLine = (startPos: IPosition, endPos: IPosition): string => {
 
-  const middleX = (endPos.x + startPos.x)/2;
-  const middleY = (endPos.y + startPos.y)/2
+  const middleX = (endPos.x + startPos.x) / 2
+  const middleY = (endPos.y + startPos.y) / 2
 
   return `M${startPos.x},${startPos.y} ${middleX},${middleY} ${endPos.x},${endPos.y}`
 }

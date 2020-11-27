@@ -1,10 +1,10 @@
 import * as React from 'react'
 import {
   CanvasWrapper, ICanvasInnerProps, ICanvasOuterProps, IChart, IConfig, ILink,
-  ILinkDefaultProps, INodeProps, INodeInnerProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
+  ILinkDefaultProps, INodeInnerProps, INodeProps, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas,
   IOnDragCanvasStop, IOnDragNode, IOnDragNodeStop, IOnLinkCancel, IOnLinkClick, IOnLinkComplete, IOnLinkMouseEnter,
   IOnLinkMouseLeave, IOnLinkMove, IOnLinkStart, IOnNodeClick, IOnNodeDoubleClick, IOnNodeMouseEnter, IOnNodeMouseLeave, IOnNodeSizeChange,
-  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsGroupProps, IPortsDefaultProps, ISelectedOrHovered, PortsDefault, LinkDefault, LinkWrapper, NodeWrapper,
+  IOnPortPositionChange, IOnZoomCanvas, IPortProps, IPortsDefaultProps, IPortsGroupProps, ISelectedOrHovered, LinkDefault, LinkWrapper, NodeWrapper, PortsDefault,
 } from '../../'
 import { getMatrix } from './utils/grid'
 

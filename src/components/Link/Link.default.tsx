@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { generateStraightLine, generateRightAnglePath, generateSmartPath, IConfig, ILink, IOnLinkClick, IOnLinkMouseEnter, IOnLinkMouseLeave, IPort, IPosition } from '../../'
+import { generateRightAnglePath, generateSmartPath, generateStraightLine, IConfig, ILink, IOnLinkClick, IOnLinkMouseEnter, IOnLinkMouseLeave, IPort, IPosition } from '../../'
 import { ArrowLink, RegularLink } from './variants'
 
 export interface ILinkDefaultProps {
@@ -34,7 +34,7 @@ export const LinkDefault = (props: ILinkDefaultProps) => {
     linkColor,
     ...props,
   }
-  
+
   return config.showArrowHead
     ? <ArrowLink {...linkProps} />
     : <RegularLink {...linkProps} />

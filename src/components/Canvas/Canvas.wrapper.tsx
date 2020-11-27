@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import { v4 } from 'uuid'
-import { IConfig, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas, IOnDragCanvasStop, IOnZoomCanvas, ICanvasInnerProps, ICanvasOuterProps, REACT_FLOW_CHART } from '../../'
+import { ICanvasInnerProps, ICanvasOuterProps, IConfig, IOnCanvasClick, IOnCanvasDrop, IOnDeleteKey, IOnDragCanvas, IOnDragCanvasStop, IOnZoomCanvas, REACT_FLOW_CHART } from '../../'
 import CanvasContext from './CanvasContext'
 
 export interface ICanvasWrapperProps {
@@ -127,7 +127,9 @@ export class CanvasWrapper extends React.Component<ICanvasWrapperProps, IState> 
                 tabIndex={0}
                 onKeyDown={(e: React.KeyboardEvent) => {
                   // delete or backspace keys
-                  if (e.keyCode === 46 || e.keyCode === 8) {
+                  // keyCode deprecated but still widely supported
+                  // tslint:disable-next-line
+                  if (e.key === 'Delete' || e.key === 'Backspace' || e.keyCode === 46 || e.keyCode === 8) {
                     onDeleteKey({ config })
                   }
                 }}
