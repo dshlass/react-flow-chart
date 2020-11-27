@@ -32,7 +32,9 @@ export type INode<NodeProps = undefined, PortProps = undefined> = {
   id: string
   type: string
   position: IPosition
-  value?: any,
+  value?: any
+  functionId?: string
+  graphId?: string
   orientation?: number
   readonly?: boolean
   ports: {
